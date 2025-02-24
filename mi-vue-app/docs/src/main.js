@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './assets/bootstrap-icons/bootstrap-icons.css';
 import * as bootstrap from 'bootstrap';
+import './style.css';  // Ruta relativa al archivo CSS
+
+
 import confetti from 'canvas-confetti';
 
 
