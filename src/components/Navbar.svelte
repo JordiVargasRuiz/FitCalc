@@ -88,7 +88,7 @@
 </style>
 
 <nav>
-  <img src="./logo.png" alt="Logo" />
+  <img src="./logo.png" alt="Logo1" />
 
   <button class="menu-toggle" on:click={toggleMenu}>
     <div></div>
