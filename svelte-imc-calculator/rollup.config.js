@@ -49,20 +49,14 @@ export default {
 			}
 		}),
 		css({ output: 'bundle.css' }),
-
-		// Resolución de módulos
 		resolve({
 			browser: true,
 			dedupe: ['svelte'],
 			exportConditions: ['svelte']
 		}),
 		commonjs(),
-
-		// Si es desarrollo, ejecutar servidor local
 		!production && serve(),
 		!production && livereload('public'),
-
-		// Minimizar código si es producción
 		production && terser()
 	],
 	watch: {
@@ -70,4 +64,3 @@ export default {
 	}
 };
 
-  
