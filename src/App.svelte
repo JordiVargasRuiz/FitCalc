@@ -6,7 +6,7 @@
 </script>
 
 <main>
-  <Background imageUrl="/FitCalc/bg.png" />
+  <Background imageUrl="./bg.png" />
   
   <Navbar />
   <div class="welcome-container">
