@@ -88,7 +88,7 @@
 </style>
 
 <nav>
-  <img src="./logo.png" alt="Logo" />
+  <img src="/FitCalc/logo.png" alt="Logo" />
 
   <button class="menu-toggle" on:click={toggleMenu}>
     <div></div>
