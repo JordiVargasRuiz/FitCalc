@@ -1,0 +1,19 @@
+<script>
+  export let imageUrl = ''; // URL de la imagen de fondo
+</script>
+
+<style>
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1; /* Esto asegura que se quede al fondo, detrás del contenido */
+  }
+</style>
+
+<div class="background" style="background-image: url({imageUrl});"></div>
