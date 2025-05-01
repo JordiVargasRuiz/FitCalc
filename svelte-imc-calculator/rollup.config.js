@@ -30,37 +30,34 @@ function serve() {
 }
 
 export default {
-	input: 'src/main.js',
-	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js',
-		// Configuración para GitHub Pages
-		// Esto le dice a Svelte que los recursos se sirven desde una subcarpeta
-		// Esto es clave para que funcione correctamente en GitHub Pages
-		base: '/FitCalc/', // Asegúrate de que este valor coincide con tu nombre de repositorio en GitHub
-	},
-	plugins: [
-		svelte({
-			compilerOptions: {
-				// Habilitar verificaciones en tiempo de ejecución si no es producción
-				dev: !production
-			}
-		}),
-		css({ output: 'bundle.css' }),
-		resolve({
-			browser: true,
-			dedupe: ['svelte'],
-			exportConditions: ['svelte']
-		}),
-		commonjs(),
-		!production && serve(),
-		!production && livereload('public'),
-		production && terser()
-	],
-	watch: {
-		clearScreen: false
-	}
+  input: 'src/main.js',
+  output: {
+    sourcemap: true,
+    format: 'iife',
+    name: 'app',
+    file: 'public/build/bundle.js',
+    // Configuración para servir desde GitHub Pages
+    base: production ? '/FitCalc/' : '/', // Asegura que la base sea solo '/' en desarrollo local
+  },
+  plugins: [
+    svelte({
+      compilerOptions: {
+        dev: !production,
+      }
+    }),
+    css({ output: 'bundle.css' }),
+    resolve({
+      browser: true,
+      dedupe: ['svelte'],
+      exportConditions: ['svelte'],
+    }),
+    commonjs(),
+    !production && serve(),
+    !production && livereload('public'),
+    production && terser(),
+  ],
+  watch: {
+    clearScreen: false,
+  },
 };
 
